@@ -1,0 +1,29 @@
+<script src="/public.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm jumbotron">
+            <form action="/orders/getbreakfast" method="get">
+                <div>
+                    <a tabindex="0" class="btn btn-primary btn_circ" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="Just type your favourite ingridient."> <p class="hint">?</p> </a>
+                    <label>Main ingridient :</label>
+                    <input type="text" name="ingridient" />
+                </div>
+                <div>
+                    <a tabindex="0" class="btn btn-primary btn_circ" role="button" data-toggle="popover" data-trigger="focus" title="Available countries" data-html="true" data-content="{{#each json.meals}} <a href='orders/getbreakfast?cuntry={{this.strArea}}'> {{this.strArea}}, </a> {{/each}}"> <p class="hint">?</p> </a>
+                    <label >Orgin country :</label>
+                    <input type="text" name="cuntry" />
+                </div>
+                <div>                    
+                    <label><a tabindex="0" class="btn btn-primary btn_circ" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="If you jast want a recipe, press on link or on button 'Get recipe'."> <p class="hint">?</p> </a><a href="/orders/getbreakfast"> This is hard!!! <br> I just want something to EAT !!!</a></label>
+                </div>
+                <div>
+                    <input class="btn btn-primary" type="submit" value="Get recipe" />
+                </div>
+            </form>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+</div>

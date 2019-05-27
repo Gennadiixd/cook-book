@@ -1,0 +1,45 @@
+<div>
+    {{#each json.meals}}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div><img src="{{this.strMealThumb}}" alt="" style="max-width: 330px;"></div>
+                <div><a href="/orders/getbreakfast/{{this.strMeal}}">
+                        <h5>{{this.strMeal}}</h5>
+                    </a></div>
+            </div>
+            <div class="col-sm ">
+                {{this.meals}}
+                <ul>
+                    {{lookup ../this.ingridientsArray @index}}                    
+                </ul>
+                
+                <ul>
+                    {{#each this.ingridients}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        {{#if this.strInstructions}}
+        <div class="row">
+            <div class="col-sm jumbotron">
+                <div>{{this.strInstructions}}</div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm ">
+                {{#if this.strYoutube}}
+                <iframe width=90% height="500px" src="https://www.youtube.com/embed/{{this.strYoutube}}">
+                </iframe>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
